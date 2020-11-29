@@ -1,0 +1,14 @@
+{
+  "name": "k6-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Sinnv2710/k6-api.git",
+  "author": "<sin.nguyen@credify.one>",
+  "license": "MIT",
+  "scripts": {
+    "clean:influxd": "sudo killall influxd",
+    "compose" : "sudo docker-compose up -d influxdb grafana",
+    "start" : "k6 run --out influxdb=http://localhost:8086 ./api/*.js"
+    
+  }
+}
